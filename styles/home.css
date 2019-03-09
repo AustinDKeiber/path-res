@@ -1,0 +1,173 @@
+.bottomMargins{
+    margin-bottom: 1%;
+    margin-top: 1%;
+}
+hr{
+    margin: 0;
+    padding:0;
+    display: block;
+    height: 3 px;
+    border: 0;
+    border-top: 3px solid black;
+}
+
+.carousel-content {
+    position: absolute;
+    width: 70%;
+    top: 15%;
+    /* bottom: 60%; */
+    left: 15%;
+    z-index: 20;
+    color: white;
+    text-shadow: 0 1px 2px rgba(0,0,0,.6);
+  }
+
+  .carousel-content h1 {
+      font-size: 3vw;
+  }
+
+  .carousel-content h5 {
+    font-size: 1.75vw;
+}
+/* WHAT WE DO ICONS */
+
+.overlaying-text{
+    height:100%;
+    width:100%;
+    padding-top:25%;
+    border-radius:97.5px;
+    color:white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0,0,0,0.3);
+    opacity: 0.0;
+
+    -webkit-transition-property: opacity;
+    -webkit-transition-duration: .5s; 
+    transition-property: opacity;
+    transition-duration: .5s;
+}
+
+.clicked{
+    opacity:1.0;
+    border-radius:97.5px  97.5px 0px 0px;
+    margin:0;
+}
+
+.overlaying-text:hover{
+    opacity:1.0;
+}
+
+#icon1{
+    padding-left:7.0px;
+}
+
+.spacer{
+    height:5.0px; 
+}
+
+h1{
+    font-size: 32.0px;
+}
+
+.center-arrows{
+    display: inline-block;
+    width: 100%;
+    text-align:center;
+}
+
+.center {  
+    height:195px;
+    padding-top:10.0px;
+    padding-bottom:10.0px; 
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+.icons{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.expander{
+    opacity:0;
+    height: 0.0px;
+    display:none;
+    border-bottom:3px solid black;
+    background-color:rgba(0,0,0,.3);
+}
+
+.expanded{
+    display:block;
+    height:200.0px;
+    opacity: 1.0;
+}
+
+
+/* END */
+
+/*JOHNNY's STUFF*/
+/*
+------------------------About Page CSS------------------------
+*/
+.about{
+    margin: 4em 0;
+    position: relative;
+   }
+   .about h1{
+    color:rgba(0, 206, 171, 0.801);
+    margin: 1.5em; 
+   }
+   .about .item{
+    position: relative;
+   }
+   .about .desc{
+    background: rgba(0, 206, 171, 0.801);
+    color: #fff;
+    text-align: center;
+    transition:.3s ease-in;
+   }
+   /*
+   .about .item:hover .desc{
+    height: 100%;
+    background: rgba(0, 206, 171, 0.801);
+    position: absolute;
+    width: 92%;
+    padding: 5em;
+    top: 0;
+    border-bottom-left-radius: 0;
+   }*/
+   
+   /*
+   ------------------------Contact Page CSS------------------------
+   */
+   .contact{
+    margin: 4em 0;
+    position: relative;
+   }
+   .contact h1{
+    color:rgba(0, 206, 171, 0.801);
+    margin: 1.5em;    
+   }
+   .contact .left{
+       max-width: 600px;
+   }
+   .contact .left .btn-secondary{
+       background: rgba(0, 206, 171, 0.801);
+       color: #fff;
+       width: 35%;
+       border: 0;
+       margin-bottom: 50px;
+   }
+   .contact .left .form-control::placeholder{
+       color: #888;
+       font-size: 16px;
+   }
+   
+   /*
+   ------------------------Socials Page CSS------------------------
+   */
+   
