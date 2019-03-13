@@ -1,81 +1,32 @@
-// $(document).mouseup(function (e) {
-//     var container = $("#expander");
+/* 
+    initiliazes variables for the icon area. Anything ending in Icon changes
+    the blurryness of an icon's image and anything that has Text at the end
+    controls the opacity of the box that is over the Icon's image, controls 
+    the roundness of its corners, and controls the expansion of the designat-
+    ed information areas.
+ */
+var container = $("#expander");
+var brandingIcon = $('img#icon1');
+var brandingText = $("h1#brandingIcon");
+var adsIcon = $('img#icon2');
+var adsText = $("h1#advertisementIcon");
+var waIcon = $('img#icon3');
+var waText = $("h1#waIcon");
+var smIcon = $('img#icon4');
+var smText = $("h1#socialMediaIcon");
 
-//     var brandingIcon = $('img#icon1');
-//     var brandingText = $("h1#brandingIcon");
-//     var adsIcon = $('img#icon2');
-//     var adsText = $("h1#advertisementIcon");
-//     var waIcon = $('img#icon3');
-//     var waText = $("h1#waIcon");
-//     var smIcon = $('img#icon4');
-//     var smText = $("h1#socialMediaIcon");
-
-//     var id = e.target.id;
-//     console.log(id);
-
-//     // if the target of the click isn't the container nor a descendant of the container
-//     if (!container.is(e.target) && container.has(e.target).length === 0 && container.height() != 0) {
-
-//         switch (id) {
-//             case "brandingIcon":
-//                 console.log("ho");
-//                 container.css("height", "0.0px");
-//                 container.css("opacity", "0");
-//                 break;
-//             case "advertisementIcon":
-//                 container.css("height", "0.0px");
-//                 container.css("opacity", "0");
-//                 break;
-//             case "waIcon":
-//                 container.css("height", "0.0px");
-//                 container.css("opacity", "0");
-//                 break;
-//             case "socialMediaIcon":
-//                 container.css("height", "0.0px");
-//                 container.css("opacity", "0");
-//                 break;
-//             default:
-//                 container.animate({ height: "0.0px", opacity: "0" }, 200);
-//         }
-
-//         if (currentSelectedIcon != null) {
-//             currentSelectedText.css("opacity", "0");
-//             currentSelectedText.css("backgroundColor", "rgba(0,0,0,0)");
-//             currentSelectedIcon.css("filter", "blur(0px)");
-//             currentSelectedText.css("borderRadius", "97.5px");
-//         }
-
-//         currentSelectedIcon = null;
-//         currentSelectedText = null;
-//     }
-// });
+var currentSelectedIcon = null;
+var currentSelectedText = null;
 
 $(document).ready(function () {
 
     /* ENTIRE SECTION IS FOR ICON SELECTION AREA */
-
-    /* 
-       initiliazes variables for the icon area. Anything ending in Icon changes
-       the blurryness of an icon's image and anything that has Text at the end
-       controls the opacity of the box that is over the Icon's image, controls 
-       the roundness of its corners, and controls the expansion of the designat-
-       ed information areas.
-    */
-    var brandingIcon = $('img#icon1');
-    var brandingText = $("h1#brandingIcon");
-    var adsIcon = $('img#icon2');
-    var adsText = $("h1#advertisementIcon");
-    var waIcon = $('img#icon3');
-    var waText = $("h1#waIcon");
-    var smIcon = $('img#icon4');
-    var smText = $("h1#socialMediaIcon");
-
     /* 
        Creates hovers for the box's that overlay the Icon's image that change the
        blurryness of the Icon's image that is under it. This is required because
        the user can't actually hover over the Icon's image meaning we can't add a
        hover using the CSS method.
-    */ 
+    */
     brandingText.hover(function () {
         brandingIcon.css("filter", "blur(5px)");
     }, function () {
@@ -163,6 +114,8 @@ $(document).ready(function () {
                 smIcon.css("filter", "blur(0px)");
             });
         }
+        currentSelectedIcon = brandingIcon;
+        currentSelectedText = brandingText;
         brandingText.hover(function () {
             brandingIcon.css("filter", "blur(5px)");
         });
@@ -189,7 +142,7 @@ $(document).ready(function () {
                 waIcon.css("filter", "blur(5px)");
             }, function () {
                 waIcon.css("filter", "blur(0px)");
-            });    
+            });
         } else if (smText.hasClass('clicked')) {
             smText.removeClass('clicked');
             $('#smInfo').removeClass('expanded');
@@ -200,6 +153,8 @@ $(document).ready(function () {
                 smIcon.css("filter", "blur(0px)");
             });
         }
+        currentSelectedIcon = adsIcon;
+        currentSelectedText = adsText;
         adsText.hover(function () {
             adsIcon.css("filter", "blur(5px)");
         });
@@ -237,6 +192,8 @@ $(document).ready(function () {
                 smIcon.css("filter", "blur(0px)");
             });
         }
+        currentSelectedIcon = waIcon;
+        currentSelectedText = waText;
         waText.hover(function () {
             waIcon.css("filter", "blur(5px)");
         });
@@ -264,7 +221,7 @@ $(document).ready(function () {
                 waIcon.css("filter", "blur(5px)");
             }, function () {
                 waIcon.css("filter", "blur(0px)");
-            });          
+            });
         } else if (brandingText.hasClass('clicked')) {
 
             brandingText.removeClass('clicked');
@@ -277,6 +234,8 @@ $(document).ready(function () {
                 brandingIcon.css("filter", "blur(0px)");
             });
         }
+        currentSelectedIcon = smIcon;
+        currentSelectedText = smText;
         smText.hover(function () {
             smIcon.css("filter", "blur(5px)");
         });
@@ -284,4 +243,14 @@ $(document).ready(function () {
         $('#smInfo').addClass('expanded');
     });
 
+});
+
+
+$(document).mouseup(function (e) {
+    // console.log(currentSelectedIcon);
+    var clicked = e.target.classList;
+
+    console.log(clicked);
+    console.log(currentSelectedIcon);
+    if(clicked != currentSelectedIcon){}
 });
